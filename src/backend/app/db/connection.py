@@ -7,7 +7,5 @@ load_dotenv()
 
 db_url = os.getenv("DB_URL")
 
-print(db_url)
-
 engine = create_engine(db_url, pool_pre_ping=True)
 Session = sessionmaker(bind=engine)

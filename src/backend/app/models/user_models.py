@@ -11,9 +11,7 @@ class Role(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name = Column(String(50), nullable=False, unique=True)
 
-    users = relationship("User", back_populates="role")
-
-class UserModel(Base):
+class User(Base):
     __tablename__ = 'users'
 
     
@@ -24,3 +22,5 @@ class UserModel(Base):
     role_id = Column(UUID(as_uuid=True), ForeignKey("roles.id", ondelete="CASCADE"), nullable=False)
     created_at = Column(TIMESTAMP, default=datetime.utcnow)
     updated_at = Column(TIMESTAMP, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    role = relationship("Role", back_populates="users")
