@@ -1,5 +1,5 @@
-from fastapi import Depends, Response, status
-from fastapi import APIRouter
+from fastapi import Depends, status, APIRouter
+from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from app.utils.depends import get_db_session
 from app.services.auth_service import AuthService
@@ -17,7 +17,7 @@ def user_register(
     ):
     auth_service = AuthService(db_session=db_session)
     auth_service.user_register(user=user)
-    return Response(
+    return JSONResponse(
         content={'msg': 'sucess'},
         status_code=status.HTTP_201_CREATED
     )
