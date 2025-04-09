@@ -62,7 +62,7 @@ class AuthService:
         payload = {
             'sub': user.email,
             'exp': exp,
-            'role': user_on_db.role_id
+            'role': str(user_on_db.role_id)  
         }
 
         access_token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
