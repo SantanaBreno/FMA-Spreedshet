@@ -16,8 +16,9 @@ class UserResponse(BaseModel):
     created_at: datetime
     updated_at: datetime
 
-
     class Config:
         orm_mode = True # permite retornar os dados  diretamente de modelos SQLAlchemy
 
-        
+class UserLogin(BaseModel):
+    email: str
+    password: str        
