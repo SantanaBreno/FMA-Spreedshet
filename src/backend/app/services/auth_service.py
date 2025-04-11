@@ -44,6 +44,8 @@ class AuthService:
     def user_login(self, user: UserLogin, expires_in: int = 30):
         user_on_db = self.db_session.query(User).filter_by(email=user.email).first()
 
+        print("here!!!", self.db_session.bind)
+
         print(user_on_db)
         if user_on_db is None:
             raise HTTPException(
@@ -71,3 +73,20 @@ class AuthService:
             'access_token': access_token,
             'exp': exp.isoformat()
         }
+    
+    def verify_token(self, access_token):
+        try:
+            data = jwt.decode(access_token, SECRET_KEY, algorithms=[ALGORITHM])
+        except JWTError:
+              raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail='Token de acesso inválido'
+            )
+        
+        user_on_db = self.db_session.query(User).filter_by(email=data['sub']).first()
+
+        if user_on_db is None:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail='Token de acesso inválido'
+            )

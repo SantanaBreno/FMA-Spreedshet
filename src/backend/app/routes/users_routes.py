@@ -2,7 +2,7 @@ from fastapi import Depends, status, APIRouter
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from app.utils.depends import get_db_session
+from app.utils.depends import get_db_session, token_verifier
 from app.services.auth_service import AuthService
 from app.schemas.user import UserCreate, UserLogin
 
@@ -40,3 +40,7 @@ def user_register(
         content=auth_data,
         status_code=status.HTTP_200_OK
     )
+
+@router.get('/test')
+def test_user_verify(token_verify = Depends(token_verifier)):
+    return 'It Works'
