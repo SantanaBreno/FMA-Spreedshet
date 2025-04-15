@@ -7,6 +7,7 @@ import {
   Button
 } from './styles';
 
+
 import Logo from '../../components/Logo';
 
 function Login() {
@@ -20,6 +21,7 @@ function Login() {
   return (
     <LoginWrapper>
       <Logo />
+      <SideBar />
       <Form onSubmit={handleSubmit}>
         <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Senha" />
