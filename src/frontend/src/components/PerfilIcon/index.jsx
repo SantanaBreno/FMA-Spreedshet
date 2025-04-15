@@ -4,10 +4,10 @@ import { Icon } from "@iconify/react";
 
 import { Profile } from "./styles";
 
-const PerfilIcon = ({src, size = 40, alt = 'Foto de Perfil'}) => {
+const PerfilIcon = ({src = "qlementine-icons:user-24", size = 40, alt = 'Foto de Perfil'}) => {
     const imageSrc = src || "qlementine-icons:user-24";
     
-    if (src) {
+    if (src != "qlementine-icons:user-24") {
         return (
             <Profile 
             src={imageSrc}

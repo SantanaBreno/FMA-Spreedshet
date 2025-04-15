@@ -3,6 +3,7 @@ import React from "react";
 import SideBar from '../../components/SideBar';
 import PerfilIcon from "../../components/PerfilIcon";
 import { DecorationWorksheetsWrapper } from "./styles";
+import NavBar from "../../components/NavBar";
 
 const DecorationWorksheets = () => {
     return (
