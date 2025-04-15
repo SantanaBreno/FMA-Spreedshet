@@ -13,7 +13,6 @@ export const SidebarContainer = styled.div`
 `;
 
 export const UpSideContainer = styled.div`
-  border: 3px solid;
   border-color: white;
   display: flex;
   flex-direction: row;
@@ -21,7 +20,6 @@ export const UpSideContainer = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-  border: 2px solid blue;
   font-family: 'Inter', sans-serif;
   display: ${props => (props.isOpen ? 'flex': 'none')};
   padding: 0;
@@ -41,7 +39,7 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0  10px;
+  padding: 0;
   margin-bottom: 30px;
   justify-content: start;
 
@@ -52,7 +50,8 @@ export const Logo = styled.div`
    span {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 18px;  
+    padding-left: 5px;
+    font-size: 30px;  
   }
   ` 
 

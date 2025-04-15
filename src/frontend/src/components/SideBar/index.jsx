@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-import { FiMenu, FiUser, FiHome, FiSettings } from "react-icons/fi";
-import { Icon } from "@iconify/react"
+import { Icon } from "@iconify/react";
+
+import logo from "../../assets/logo_branca.svg";
 
 import {
   SidebarContainer,
@@ -21,8 +22,8 @@ const SideBar = () => {
     <SidebarContainer isOpen={isOpen}>
       <UpSideContainer>
       <LogoContainer isOpen={isOpen}> 
-      <Logo isOpen={isOpen}>
-        <img src="logo" alt="Logo" />
+      <Logo>
+        <img src={logo} alt="Logo" />
         <span>FMA</span>
       </Logo>
       </LogoContainer>
@@ -49,4 +50,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default SideBar;
