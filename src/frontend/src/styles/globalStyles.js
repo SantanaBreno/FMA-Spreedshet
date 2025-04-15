@@ -17,7 +17,7 @@ const fmaGlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: white;
     font-family: 'Poppins', sans-serif;
     color: white;
     height: 100%;
