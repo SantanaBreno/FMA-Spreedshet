@@ -5,6 +5,7 @@ import PerfilIcon from "../../components/PerfilIcon";
 import NavBar from "../../components/NavBar";
 
 import { DecorationWorksheetsWrapper } from "./styles";
+import NavBar from "../../components/NavBar";
 
 
 

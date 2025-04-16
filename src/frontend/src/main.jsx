@@ -1,10 +1,9 @@
-// src/main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Login from './pages/Login';
-import Home from './pages/Home'; // <- certifique-se que o arquivo existe
+import Home from './pages/Home'; 
 import DecorationWorksheets from './pages/DecorationWorksheets';
 import GlobalStyles from './styles/globalStyles';
 

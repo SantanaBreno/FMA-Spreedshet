@@ -6,7 +6,7 @@ import { Profile } from "./styles";
 
 const PerfilIcon = ({src, size = 40, alt = 'Foto de Perfil'}) => { 
     
-    if (src) {
+    if (src != "qlementine-icons:user-24") {
         return (
             <Profile 
             src={src}
