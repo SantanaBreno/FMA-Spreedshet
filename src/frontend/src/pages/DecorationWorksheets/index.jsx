@@ -2,6 +2,9 @@ import React from "react";
 
 import SideBar from '../../components/SideBar';
 import PerfilIcon from "../../components/PerfilIcon";
+import NavBar from "../../components/NavBar";
+
+
 import { DecorationWorksheetsWrapper } from "./styles";
 
 const DecorationWorksheets = () => {
@@ -9,7 +12,7 @@ const DecorationWorksheets = () => {
         <>
             {/* <SideBar /> */}
             <DecorationWorksheetsWrapper>
-                <PerfilIcon size={40}/>
+                <NavBar />
             </DecorationWorksheetsWrapper>
         </>
     );

@@ -9,7 +9,7 @@ export const DecorationWorksheetsWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: white;
   color: white;
   padding: 0; // ou ajuste para não estourar a altura
 `;
