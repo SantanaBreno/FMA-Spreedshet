@@ -12,4 +12,86 @@ export const DecorationWorksheetsWrapper = styled.div`
   background-color: white;
   color: white;
   padding: 0; // ou ajuste para não estourar a altura
+
+`;
+
+export const NavBarContainer = styled.div`
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .nav-bar {
+      justify-content: start;
+    }   
+`;
+
+export const ContentContainer = styled.div`
+    width: 90%;
+    height: 80vh;
+    margin-top: 40px;
+    margin-left: 40px;
+
+`;
+
+export const UpSideContentContainer = styled.div`
+    height: 20%;
+    width: 100%;
+    display: flex;
+
+`;
+
+export const LeftContainer = styled.div`
+      width: 50%;
+      height: 100%;
+
+      h2 {
+      color: black;
+    }
+`;
+
+export const RightContainer = styled.div`
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+`;
+
+export const EditButton = styled.button`
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+`;
+
+export const ExportButton = styled.button`
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+
+  span {
+    color: #D0D0D0;
+  }
+`;
+
+export const SpreadsheetContainer = styled.div`
+    height: 80%;
+    border: 2px solid orange;
+    width: 100%;
+`;
+
+export const ScrollContainer = styled.div`
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  border: 2px solid brown;
+  height: 100%;
 `;

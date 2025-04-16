@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
-export const SidebarContainer = styled.div`
+export const Container = styled.div`
   height: 100vh;
-  width: ${props => (props.isOpen ? "250px" : "80px")};
+  width: ${props => (props.isOpen ? "250px" : "60px")};
   background-color: black;
   color: white;
   padding: 1rem;
   transition: width 0.3s;
   display: flex;
   flex-direction: column;
-  align-items: ${props => (props.isOpen ? 'normal': 'center')};  
+  align-items: ${props => (props.isOpen ? 'normal': 'center')};
+  position: absolute;
 `;
 
 export const UpSideContainer = styled.div`

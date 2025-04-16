@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NavBarContainer = styled.div`
+export const Container = styled.div`
     height: 50px;
     width: 100%;
     display: flex;

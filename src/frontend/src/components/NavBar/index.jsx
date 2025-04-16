@@ -1,14 +1,14 @@
 import React from "react";
 import PerfilIcon from "../PerfilIcon";
 
-import { NavBarContainer } from "./styles";
+import { Container } from "./styles";
 
 const NavBar = () => {
   return (
       <>
-        <NavBarContainer>
+        <Container>
           <PerfilIcon />
-        </NavBarContainer>
+        </Container>
       </>
   );
 };
