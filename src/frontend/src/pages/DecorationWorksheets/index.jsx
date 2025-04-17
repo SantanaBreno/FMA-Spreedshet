@@ -6,6 +6,8 @@ import SideBar from '../../components/SideBar';
 import PerfilIcon from "../../components/PerfilIcon";
 import NavBar from "../../components/NavBar";
 
+import TitleColumn from "../../components/TableColumn";
+
 import { 
     DecorationWorksheetsWrapper, 
     NavBarContainer, 
@@ -18,6 +20,7 @@ import {
     SpreadsheetContainer,
     ScrollContainer
 } from "./styles";
+import TableColumn from "../../components/TableColumn";
 
 const DecorationWorksheets = () => {
     return (
@@ -44,7 +47,7 @@ const DecorationWorksheets = () => {
                         </UpSideContentContainer>
                         <SpreadsheetContainer>
                             <ScrollContainer>
-                                
+                                <TableColumn title="Coluna 1" />
                             </ScrollContainer>
                         </SpreadsheetContainer>       
                     </ContentContainer>

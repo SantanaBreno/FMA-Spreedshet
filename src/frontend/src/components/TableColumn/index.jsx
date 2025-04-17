@@ -1,10 +1,13 @@
 import React from "react";
 
 import { TitleCell } from "./styles";
-const TableColumn = ({ title, }) => {
+
+const TableColumn = ({ title }) => {
     return (
         <TitleCell>
-            <span>Item</span>
+            <span><b>{title}</b></span>
         </TitleCell>
     );
 };
+
+export default TableColumn;

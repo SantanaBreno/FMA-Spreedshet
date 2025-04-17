@@ -92,6 +92,5 @@ export const ScrollContainer = styled.div`
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  border: 2px solid brown;
   height: 100%;
 `;
