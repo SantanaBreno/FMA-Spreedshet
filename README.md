@@ -124,7 +124,9 @@
 
 - **RNF10**: O sistema deve ser acessível via navegador web sem necessidade de instalação local.
 
-# 7. Como rodar o Backend
+# 7. Como rodar o projeto
+
+## 7.1 Como rodar o Backend
 
 Para rodar o Backend, é importante certificar se o .env existe na raiz do backend. Ele deve conter:
 
@@ -163,7 +165,7 @@ E então:
 uvicorn app.main:app --reload
 ```
 
-# Como rodar o Frontend
+## 7.2 Como rodar o Frontend
 
 Para rodar o Frontend você deve navegar até a pasta 'frontend' através do prompt de comando (terminal):
 
@@ -177,3 +179,17 @@ E então rodar os seguintes comandos:
 npm install
 npm run dev
 ```
+
+# 8. Tecnologias usadas
+
+&emsp;&emsp; A seguir, estão listadas as principais tecnologias e serviços utilizados no desenvolvimento e implantação da aplicação:
+
+- React: Utilizado para a construção da interface do usuário (frontend), proporcionando uma experiência interativa, responsiva e modular.
+
+- FastAPI: Framework assíncrono e de alta performance usado no desenvolvimento da API RESTful do backend, garantindo rapidez, escalabilidade e documentação automática.
+
+- Vercel: Plataforma utilizada para realizar o deploy do frontend, permitindo integrações contínuas e hospedagem otimizada para aplicações React.
+
+- Supabase: Solução utilizada para hospedagem e gerenciamento do banco de dados, com funcionalidades similares ao Firebase, baseada em PostgreSQL.
+
+- Railway: Responsável pelo deploy do backend, oferecendo infraestrutura simples e eficiente para aplicações em FastAPI.
