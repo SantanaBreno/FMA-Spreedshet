@@ -87,7 +87,7 @@
 
 - **RF04**: O sistema deve permitir o cadastro, edição e exclusão de clientes.
 
-- **RF05**: O sistema deve permitir a assosiação de uma planilha a um cliente.
+- **RF05**: O sistema deve permitir a associação de uma planilha a um cliente.
 
 - **RF06**: O sistema deve permitir que colaboradores realizem login com autenticação segura.
 
@@ -122,4 +122,58 @@
 
 - **RNF09**: O sistema deve estar disponível 99,5% do tempo em horários comerciais (8h às 21h).
 
-- **RNF10**: O sistema deve ser acessível via navegador web sem necessidade de instalação local
+- **RNF10**: O sistema deve ser acessível via navegador web sem necessidade de instalação local.
+
+# 7. Como rodar o Backend
+
+Para rodar o Backend, é importante certificar se o .env existe na raiz do backend. Ele deve conter:
+
+- 'DB_URL' com uma URL de um banco de dados,
+- 'SECRET_KEY' que é um hash usado para encriptar a senha e
+- 'ALGORITH = HS256' que é o algoritmo que vai encriptar.
+
+Então, você deve navegar até a pasta 'backend' através do pompt de comando (terminal):
+
+```
+cd src/backend
+```
+
+Se você estiver usando o sistema operacional Windows, rode o seguinte comando para criar o ambiente virtual:
+
+```
+python -m venv venv
+venv/Scripts/activate
+```
+
+Se você estiver usando o sistema operacional Linux ou macOS, rode o seguinte comando:
+
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Instale os requirimentos:
+```
+pip install -r requirements.txt
+```
+
+E então:
+
+```
+uvicorn app.main:app --reload
+```
+
+# Como rodar o Frontend
+
+Para rodar o Frontend você deve navegar até a pasta 'frontend' através do prompt de comando (terminal):
+
+```
+cd src/frontend
+```
+
+E então rodar os seguintes comandos:
+
+```
+npm install
+npm run dev
+```
