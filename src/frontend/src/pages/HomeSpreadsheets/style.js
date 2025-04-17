@@ -21,16 +21,34 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const OptionsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  row-gap: 68px;
-  column-gap: 120px;
-  width: 90%;
+export const PageContainer = styled.div`
+  width: 100%;
   max-width: 1180px;
   margin: 0 auto;
-  justify-content: start;
+  padding: 0 24px;
   box-sizing: border-box;
+`;
+
+export const TopControls = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+`;
+
+export const ControlsRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
+
+export const OptionsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  width: 100%;
 `;
 
 export const OptionIcon = styled.div`
@@ -48,20 +66,3 @@ export const OptionLabel = styled.div`
   color: #DDDDDD;
   font-family: 'Inter', sans-serif;
 `;
-
-export const TopControls = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  box-sizing: border-box;
-  margin-bottom: 40px;
-
-`;
-
-export const ControlsRight = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-`;
-

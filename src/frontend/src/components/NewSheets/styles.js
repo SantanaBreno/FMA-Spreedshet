@@ -11,7 +11,7 @@ export const AddCardWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
-  gap: 12px;
+  gap:12px;
   cursor: pointer;
   transition: transform 0.3s ease;
   &:hover {
