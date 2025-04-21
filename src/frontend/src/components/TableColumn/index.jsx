@@ -1,12 +1,17 @@
 import React from "react";
 
-import { TitleCell } from "./styles";
+import { ColumnContainer, TitleCell, Cell } from "./styles";
 
 const TableColumn = ({ title }) => {
     return (
-        <TitleCell>
+       <ColumnContainer>
+       <TitleCell>
             <span><b>{title}</b></span>
         </TitleCell>
+        <Cell>
+            
+        </Cell>
+       </ColumnContainer>
     );
 };
 
