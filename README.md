@@ -193,3 +193,119 @@ npm run dev
 - Supabase: Solução utilizada para hospedagem e gerenciamento do banco de dados, com funcionalidades similares ao Firebase, baseada em PostgreSQL.
 
 - Railway: Responsável pelo deploy do backend, oferecendo infraestrutura simples e eficiente para aplicações em FastAPI.
+
+# 9. Roadmap
+
+&emsp;&emsp; Esta seção apresenta as etapas finais necessárias para a conclusão do sistema FMA-Spreadsheet. O roadmap está organizado em fases, cada uma contendo subtarefas divididas por responsabilidade (frontend, backend e integração), além das etapas de testes, dockerização e deploy.
+
+## 9.1 Integração da Tela de Login
+
+- Conectar o frontend com o backend para envio de credenciais
+- Implementar autenticação com senha criptografada
+- Armazenar o token de sessão com expiração de 15 minutos.
+- Redirecionar o usuário para a seleção de serviço após o login bem-sucedido
+
+## 9.2 Tela de Home das Planilhas 
+
+### 9.2.1 Frontend
+
+- Criar layout conforme mockup: listagem de planilhas, filtros por data e tipo de projeto.
+- Adicionar campo de busca por nome de planilha.
+- Implementar barra lateral com opções de navegação e criação de nova planilha.
+
+### 9.2.2 Backend
+
+- Criar endpoint para listagem de planilhas por usuário.
+- Adicionar filtros de ordenação e busca por nome.
+- Gerenciar sessão e permissões de acesso por token.
+
+### 9.2.3 Integração
+
+- Realizar cahamadas à API e exibir os dados em tela.
+- Tratar mensagens de erro e estado de carregamento
+
+## 9.3 Tela da Planilha Aberta
+
+- Construir tabela com rolagem interna para exibição de produtos.
+- Adicionar botões para editar, exportar e excluir.
+- Implementar campo de busca por produto.
+
+### 9.3.2 Backend
+
+- Endpoint para obter detalhes da planilha.
+- Função de exportação em formato .xlsx.
+- Lógica para edição e exclusão de planilhas.
+
+### 9.3.3 Integração
+
+- Conectar interface com os dados recebidos da API.
+- Validar edição de itens e exportação correta.
+
+## 9.4 Tela de Criação de Planilha
+
+### 9.4.1 Frontend
+
+- Criar formulário com campos: nome da planilha, cliente e projeto vinculado.
+- Incluir botão de criação com feedback visual.
+
+### 9.4.2 Backend
+
+- Criar endpoint para cadastrado de nova planilha
+- Implementar validações dos dados de entrada
+
+### 9.4.3 Integração
+
+- Enviar formulário para a API e redirecionar para a visualização da planilha
+
+## 9.5 Tela de Adição de Novo Item
+
+### 9.5.1 Frontend
+
+- Criar popup ou modal com formulário para adição de novo produto.
+- Campos: nome, categoria, preço, imagem (opcional).
+
+### 9.5.2 Backend
+
+- Criar endpoint para cadastro de novo produto.
+- Verificar duplicidade e validar campos obrigatórios.
+
+### 9.5.3 Integração
+
+- Atualizar a tabela da planilha com o novo item inserido.
+- Feedback visual de sucesso ou falha.
+
+## 9.6 Dockerização
+
+### 9.6.1 Docker no Frontend
+
+- Criar Dockerfile com build do React.
+- Configurar container com Nginx para produção.
+
+### 9.6.1 Docker no Backend
+
+- Criar Dockerfile com ambiente virtual Python.
+- Incluir dependências do requirements.txt.
+- Criar docker-compose.yml para orquestração com o banco de dados.
+
+## 9.7 Testes Locais
+
+- Validar fluxo completo: login, criação, edição e exportação de planilhas.
+- Testar performance de busca e exportação com dados simulados.
+- Garantir que mensagens de erro e feedbacks estejam claros para o usuário.
+
+## 9.8 Deploy
+
+### 9.8.1 Frontend
+
+- Fazer deploy na Vercel.
+- Garantir integração com domínio customizado, se necessário.
+
+### 9.8.2 Backend
+
+- Fazer deploy na Railway.
+- Garantir comunicação segura com o Supabase.
+
+### 9.8.3 Integração final
+
+- Validar integração frontend <-> backend em ambiente de produção.
+- Realizar testes com usuários para validação da versão final.
