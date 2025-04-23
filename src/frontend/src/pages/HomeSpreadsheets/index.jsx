@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PlusIcon, Sidebar } from "lucide-react";
 import { FaRegFileExcel } from "react-icons/fa";
 import { AddCard } from "../../components/NewSheets";
-import { OptionCard } from "../../components/SheetsCard";
+import SheetsCard from "../../components/SheetsCard";
 import { SortToggle } from "../../components/SortToggle";
 import { FilterToggle } from "../../components/FilterToggle";
 import SideBar from '../../components/SideBar';
@@ -22,7 +22,6 @@ export const HomeSpreadsheets = () => {
 
   const spreadsheets = Array(12).fill({
     title: "Planilha xx",
-    Icon: FaRegFileExcel,
   });
 
   const handleFilterClick = () => {
@@ -53,7 +52,7 @@ export const HomeSpreadsheets = () => {
 
     <OptionsWrapper>
       {spreadsheets.map((sheet, index) => (
-        <OptionCard key={index} title={sheet.title} Icon={sheet.Icon} />
+        <SheetsCard key={index} title={sheet.title} Icon={sheet.Icon} />
       ))}
     </OptionsWrapper>
   </ContentWrapper>

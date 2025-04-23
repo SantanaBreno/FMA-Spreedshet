@@ -19,6 +19,7 @@ export const ContentWrapper = styled.div`
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  border: 2px solid red;
 `;
 
 export const PageContainer = styled.div`
