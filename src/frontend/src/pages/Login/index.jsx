@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Input  from '../../components/Input';
 import {
   LoginWrapper,
   Form,
-  Input,
   Button
 } from './styles';
 
@@ -21,7 +21,6 @@ function Login() {
   return (
     <LoginWrapper>
       <Logo />
-      <SideBar />
       <Form onSubmit={handleSubmit}>
         <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Senha" />

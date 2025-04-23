@@ -1,42 +1,43 @@
 import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
-  height: 100vh;
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   color: white;
   padding: 0;
+
+  .nav-bar {
+      justify-content: start;
+    }   
 `;
 
 export const ContentWrapper = styled.div`
-  flex: 1;
+  height: 80vh;
   width: 90%;
-  padding: 40px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   border: 2px solid red;
+  margin-top: 40px;
+  margin-left: 40px;
+  
 `;
 
-export const PageContainer = styled.div`
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 24px;
-  box-sizing: border-box;
-`;
+
 
 export const TopControls = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   margin-bottom: 40px;
+  border: 2px solid blue;
 `;
 
 export const ControlsRight = styled.div`
@@ -45,9 +46,18 @@ export const ControlsRight = styled.div`
   gap: 16px;
 `;
 
+export const SpreadsheetContainer = styled.div`
+  width: 100%;
+  border: 2px solid green;
+  overflow-y: auto;
+  padding: 0;
+  display: flex;
+
+`;
+
 export const OptionsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 60px;
   width: 100%;
 `;
