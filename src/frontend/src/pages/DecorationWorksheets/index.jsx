@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Icon } from "@iconify/react";
 
@@ -10,7 +10,6 @@ import { exportarPlanilha } from "../../utils/exportarPlanilha";
 
 import { 
     DecorationWorksheetsWrapper, 
-    NavBarContainer, 
     ContentContainer, 
     UpSideContentContainer,
     LeftContainer,
@@ -22,99 +21,104 @@ import {
 } from "./styles";
 
 
-
-const data = [
-    {
-      item: 1,
-      quant: 1,
-      produto: "ESPELHO",
-      descricao: "MODELO MIRAGGIO...",
-      ambiente: "HALL",
-      imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
-      dimensao: "107X187",
-      fornecedor: "FIRMACASA",
-      prazoEntrega: "PRONTA ENTREGA",
-      valorUnitario: 49999.90,
-      desconto: 0,
-      valorFinal: 49999.90,
-      status: "FECHADO"
-    },
-    {
-        item: 2,
-        quant: 12,
-        produto: "Mesa",
-        descricao: "MODELO MIRAGGIO...",
-        ambiente: "HALL",
-        imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
-        dimensao: "107X187",
-        fornecedor: "FIRMACASA",
-        prazoEntrega: "PRONTA ENTREGA",
-        valorUnitario: 49999.90,
-        desconto: 0,
-        valorFinal: 49999.90,
-        status: "FECHADO"
-      },
-      {
-        item: 3,
-        quant: 12,
-        produto: "Lustre",
-        descricao: "MODELO MIRAGGIO...",
-        ambiente: "HALL",
-        imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
-        dimensao: "107X187",
-        fornecedor: "FIRMACASA",
-        prazoEntrega: "PRONTA ENTREGA",
-        valorUnitario: 49999.90,
-        desconto: 0,
-        valorFinal: 49999.90,
-        status: "FECHADO"
-      },
-         {
-        item: 2,
-        quant: 12,
-        produto: "Mesa",
-        descricao: "MODELO MIRAGGIO...",
-        ambiente: "HALL",
-        imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
-        dimensao: "107X187",
-        fornecedor: "FIRMACASA",
-        prazoEntrega: "PRONTA ENTREGA",
-        valorUnitario: 49999.90,
-        desconto: 0,
-        valorFinal: 49999.90,
-        status: "FECHADO"
-      },
-];
-
 const DecorationWorksheets = () => {
+    const [data, setData] = useState([
+        {
+          id: 1,
+          quant: 1,
+          produto: "ESPELHO",
+          descricao: "MODELO MIRAGGIO...",
+          ambiente: "HALL",
+          imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
+          dimensao: "107X187",
+          fornecedor: "FIRMACASA",
+          prazoEntrega: "PRONTA ENTREGA",
+          valorUnitario: 49999.90,
+          desconto: 0,
+          valorFinal: 49999.90,
+          status: "FECHADO"
+        },
+        {
+            id: 2,
+            quant: 12,
+            produto: "Mesa",
+            descricao: "MODELO MIRAGGIO...",
+            ambiente: "HALL",
+            imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
+            dimensao: "107X187",
+            fornecedor: "FIRMACASA",
+            prazoEntrega: "PRONTA ENTREGA",
+            valorUnitario: 49999.90,
+            desconto: 0,
+            valorFinal: 49999.90,
+            status: "FECHADO"
+          },
+          {
+            id: 3,
+            quant: 12,
+            produto: "Lustre",
+            descricao: "MODELO MIRAGGIO...",
+            ambiente: "HALL",
+            imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
+            dimensao: "107X187",
+            fornecedor: "FIRMACASA",
+            prazoEntrega: "PRONTA ENTREGA",
+            valorUnitario: 49999.90,
+            desconto: 0,
+            valorFinal: 49999.90,
+            status: "FECHADO"
+          },
+             {
+            id: 2,
+            quant: 12,
+            produto: "Mesa",
+            descricao: "MODELO MIRAGGIO...",
+            ambiente: "HALL",
+            imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
+            dimensao: "107X187",
+            fornecedor: "FIRMACASA",
+            prazoEntrega: "PRONTA ENTREGA",
+            valorUnitario: 49999.90,
+            desconto: 0,
+            valorFinal: 49999.90,
+            status: "FECHADO"
+          },
+    ]);
+    const [editMode, setEditMode] = useState(false);
+
+    const toggleEdit = () => setEditMode(prev => !prev);
+
+    const handleChange = (id, field, value) => {
+        setData((prev) => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
+
+    }   
+
     return (
         <>  
             <SideBar />
             <DecorationWorksheetsWrapper>
-                <NavBarContainer>
-                    <NavBar className="nav-bar"/>
-                    <ContentContainer >
-                        <UpSideContentContainer>
-                            <LeftContainer>
-                                <h2>Planilha 01</h2>
-                            </LeftContainer>
-                            <RightContainer>
-                              <EditButton>
+                <NavBar className="nav-bar"/>
+                <ContentContainer >
+                    <UpSideContentContainer>
+                        <LeftContainer>
+                            <h2>Planilha 01</h2>
+                        </LeftContainer>
+                        <RightContainer>
+                            <EditButton onClick={toggleEdit}>
                                 <Icon icon="flowbite:edit-solid" style={{width: 30, height: 30}}/>
-                              </EditButton>
-                              <ExportButton variant="outlined" onClick={() => exportarPlanilha(data, "planilha_decoracao.xlsx")}>
+                            </EditButton>
+                            <ExportButton variant="outlined" onClick={() => exportarPlanilha(data, "planilha_decoracao.xlsx")}>
                                 <span>Exportar planilha</span>
                                 <Icon icon="mi:export" style={{width: 20, height: 20, color: '#D0D0D0', marginLeft: 10}}/>
-                              </ExportButton>
-                            </RightContainer>
-                        </UpSideContentContainer>
-                        <SpreadsheetContainer>
-                            <ScrollContainer>
-                                <TableSpreadsheet data={data} />
-                            </ScrollContainer>
+                            </ExportButton>
+                        </RightContainer>
+                    </UpSideContentContainer>
+                    <SpreadsheetContainer>
+                        <ScrollContainer>
+                        <TableSpreadsheet data={data} handleChange={handleChange} editMode={editMode} />
+                        </ScrollContainer>
                         </SpreadsheetContainer>       
-                    </ContentContainer>
-                </NavBarContainer>
+                </ContentContainer>
             </DecorationWorksheetsWrapper>
         </>
     );

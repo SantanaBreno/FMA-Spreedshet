@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const DecorationWorksheetsWrapper = styled.div`
-  height: 100vh;
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
@@ -13,16 +12,7 @@ export const DecorationWorksheetsWrapper = styled.div`
   color: white;
   padding: 0; // ou ajuste para não estourar a altura
 
-`;
-
-export const NavBarContainer = styled.div`
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .nav-bar {
+  .nav-bar {
       justify-content: start;
     }   
 `;
