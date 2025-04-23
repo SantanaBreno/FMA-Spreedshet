@@ -1,8 +1,15 @@
 import React from "react";
+import PerfilIcon from "../PerfilIcon";
+
+import { Container } from "./styles";
 
 const NavBar = () => {
   return (
-    <h3>NavBar</h3>
+      <>
+        <Container>
+          <PerfilIcon />
+        </Container>
+      </>
   );
 };
 

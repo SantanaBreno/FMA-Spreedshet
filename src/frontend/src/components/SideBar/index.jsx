@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import logo from "../../assets/logo_branca.svg";
 
 import {
-  SidebarContainer,
+  Container,
   NavItem,
   Label,
   ToggleButton,
@@ -16,10 +16,10 @@ import {
 
 
 const SideBar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <SidebarContainer isOpen={isOpen}>
+    <Container isOpen={isOpen}>
       <UpSideContainer>
       <LogoContainer isOpen={isOpen}> 
       <Logo>
@@ -46,7 +46,7 @@ const SideBar = () => {
         <Icon icon="tabler:plus" style={{backgroundColor: "white", color: "black", borderRadius: 4}}/>
         <Label isOpen={isOpen}>Nova tabela</Label>
       </NavItem>
-    </SidebarContainer>
+    </Container>
   );
 };
 
