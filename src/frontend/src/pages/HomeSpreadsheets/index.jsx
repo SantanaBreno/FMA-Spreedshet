@@ -30,33 +30,33 @@ export const HomeSpreadsheets = () => {
 
   return (
     <HomeWrapper>
-  <SideBar />
-  <ContentWrapper>
-    <TopControls>
-      <ControlsRight>
-        <SortToggle
-          order={sortOrder}
-          onToggle={() =>
-            setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"))
-          }
-        />
-        <FilterToggle onClick={handleFilterClick} />
-        <AddCard>
-          <OptionLabel>Nova Planilha</OptionLabel>
-          <OptionIcon>
-            <PlusIcon size={24} style={{ color: "#DDDDDD" }} />
-          </OptionIcon>
-        </AddCard>
-      </ControlsRight>
-    </TopControls>
+      <SideBar />
+      <ContentWrapper>
+        <TopControls>
+          <ControlsRight>
+            <SortToggle
+              order={sortOrder}
+              onToggle={() =>
+                setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"))
+              }
+            />
+            <FilterToggle onClick={handleFilterClick} />
+            <AddCard>
+              <OptionLabel>Nova Planilha</OptionLabel>
+              <OptionIcon>
+                <PlusIcon size={24} style={{ color: "#DDDDDD" }} />
+              </OptionIcon>
+            </AddCard>
+          </ControlsRight>
+        </TopControls>
 
-    <OptionsWrapper>
-      {spreadsheets.map((sheet, index) => (
-        <SheetsCard key={index} title={sheet.title} Icon={sheet.Icon} />
-      ))}
-    </OptionsWrapper>
-  </ContentWrapper>
-</HomeWrapper>
+        <OptionsWrapper>
+          {spreadsheets.map((sheet, index) => (
+            <SheetsCard key={index} title={sheet.title} Icon={sheet.Icon} />
+          ))}
+        </OptionsWrapper>
+      </ContentWrapper>
+  </HomeWrapper>
   );
 };
 
