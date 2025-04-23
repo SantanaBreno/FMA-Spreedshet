@@ -84,7 +84,7 @@ export const ExportButton = styled.button`
 
 export const SpreadsheetContainer = styled.div`
     height: 80%;
-    border: 2px solid orange;
+    border: 2px solid black;
     width: 100%;
 `;
 

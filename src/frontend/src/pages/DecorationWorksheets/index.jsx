@@ -3,10 +3,10 @@ import React from "react";
 import { Icon } from "@iconify/react";
 
 import SideBar from '../../components/SideBar';
-import PerfilIcon from "../../components/PerfilIcon";
 import NavBar from "../../components/NavBar";
+import TableSpreadsheet from "../../components/TableSpreadsheet";
 
-import TitleColumn from "../../components/TableColumn";
+import { exportarPlanilha } from "../../utils/exportarPlanilha";
 
 import { 
     DecorationWorksheetsWrapper, 
@@ -20,14 +20,77 @@ import {
     SpreadsheetContainer,
     ScrollContainer
 } from "./styles";
-import TableColumn from "../../components/TableColumn";
+
+
+
+const data = [
+    {
+      item: 1,
+      quant: 1,
+      produto: "ESPELHO",
+      descricao: "MODELO MIRAGGIO...",
+      ambiente: "HALL",
+      imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
+      dimensao: "107X187",
+      fornecedor: "FIRMACASA",
+      prazoEntrega: "PRONTA ENTREGA",
+      valorUnitario: 49999.90,
+      desconto: 0,
+      valorFinal: 49999.90,
+      status: "FECHADO"
+    },
+    {
+        item: 2,
+        quant: 12,
+        produto: "Mesa",
+        descricao: "MODELO MIRAGGIO...",
+        ambiente: "HALL",
+        imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
+        dimensao: "107X187",
+        fornecedor: "FIRMACASA",
+        prazoEntrega: "PRONTA ENTREGA",
+        valorUnitario: 49999.90,
+        desconto: 0,
+        valorFinal: 49999.90,
+        status: "FECHADO"
+      },
+      {
+        item: 3,
+        quant: 12,
+        produto: "Lustre",
+        descricao: "MODELO MIRAGGIO...",
+        ambiente: "HALL",
+        imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
+        dimensao: "107X187",
+        fornecedor: "FIRMACASA",
+        prazoEntrega: "PRONTA ENTREGA",
+        valorUnitario: 49999.90,
+        desconto: 0,
+        valorFinal: 49999.90,
+        status: "FECHADO"
+      },
+         {
+        item: 2,
+        quant: 12,
+        produto: "Mesa",
+        descricao: "MODELO MIRAGGIO...",
+        ambiente: "HALL",
+        imagem: "https://s3.amazonaws.com/seu-bucket/caminho/espelho.jpg",
+        dimensao: "107X187",
+        fornecedor: "FIRMACASA",
+        prazoEntrega: "PRONTA ENTREGA",
+        valorUnitario: 49999.90,
+        desconto: 0,
+        valorFinal: 49999.90,
+        status: "FECHADO"
+      },
+];
 
 const DecorationWorksheets = () => {
     return (
         <>  
             <SideBar />
             <DecorationWorksheetsWrapper>
-                
                 <NavBarContainer>
                     <NavBar className="nav-bar"/>
                     <ContentContainer >
@@ -39,7 +102,7 @@ const DecorationWorksheets = () => {
                               <EditButton>
                                 <Icon icon="flowbite:edit-solid" style={{width: 30, height: 30}}/>
                               </EditButton>
-                              <ExportButton>
+                              <ExportButton variant="outlined" onClick={() => exportarPlanilha(data, "planilha_decoracao.xlsx")}>
                                 <span>Exportar planilha</span>
                                 <Icon icon="mi:export" style={{width: 20, height: 20, color: '#D0D0D0', marginLeft: 10}}/>
                               </ExportButton>
@@ -47,7 +110,7 @@ const DecorationWorksheets = () => {
                         </UpSideContentContainer>
                         <SpreadsheetContainer>
                             <ScrollContainer>
-                                <TableColumn title="Coluna 1" />
+                                <TableSpreadsheet data={data} />
                             </ScrollContainer>
                         </SpreadsheetContainer>       
                     </ContentContainer>
