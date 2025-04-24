@@ -24,7 +24,7 @@ def user_register(
     )
 
 @router.post("/login")
-def user_register(
+def user_login(
     request_form_user: OAuth2PasswordRequestForm = Depends(),
     db_session: Session = Depends(get_db_session)
     ):
