@@ -93,6 +93,11 @@ const DecorationWorksheets = () => {
 
     }   
 
+    const handleSave = () => {
+        console.log("Salvando dados...");
+        toggleEdit();
+    }
+
     return (
         <>  
             <SideBar />
@@ -105,7 +110,10 @@ const DecorationWorksheets = () => {
                         </LeftContainer>
                         <RightContainer>
                             <EditButton onClick={toggleEdit}>
-                                <Icon icon="flowbite:edit-solid" style={{width: 30, height: 30}}/>
+                                {editMode ? 
+                                <span>Salvar</span> : 
+                                <Icon icon="flowbite:edit-solid" style={{width: 30, height: 30}}/> 
+                                }
                             </EditButton>
                             <ExportButton variant="outlined" onClick={() => exportarPlanilha(data, "planilha_decoracao.xlsx")}>
                                 <span>Exportar planilha</span>

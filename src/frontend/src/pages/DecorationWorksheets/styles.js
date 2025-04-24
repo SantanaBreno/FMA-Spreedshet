@@ -56,6 +56,15 @@ export const EditButton = styled.button`
     cursor: pointer;
     margin: 0;
     padding: 0;
+
+    span {
+      color: #D0D0D0;
+      background-color: green;
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      border-radius: 8px;
+    }
 `;
 
 export const ExportButton = styled.button`
