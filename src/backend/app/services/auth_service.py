@@ -62,12 +62,13 @@ class AuthService:
         payload = {
             'sub': user.email,
             'exp': exp,
-            'role': str(user_on_db.role_id)  
         }
 
         access_token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
         return {
             'access_token': access_token,
-            'exp': exp.isoformat()
+            'exp': exp.isoformat(),
+            'user': {"name": user_on_db.name, "email": user_on_db.email},
+            'role': str(user_on_db.role_id)  
         }
