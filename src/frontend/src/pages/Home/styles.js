@@ -19,14 +19,16 @@ export const Title = styled.h2`
   font-size: clamp(20px, 3vw, 32px);
   margin-bottom: clamp(32px, 6vh, 60px);
   text-align: center;
-  font-weight: 600;
-   font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  padding: 32px;
 `;
 
 export const OptionsWrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: clamp(16px, 5vw, 40px);
+  gap: clamp(16px, 12vw, 104px);
   flex-wrap: wrap;
   max-width: 100%;
   box-sizing: border-box;
@@ -37,13 +39,11 @@ export const OptionCard = styled.div`
   color: black;
   padding: 32px;
   border-radius: 12px;
-  width: clamp(140px, 40vw, 180px);
+  width: clamp(160px, 40vw, 200px);
   height: clamp(160px, 24vh, 200px);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
   cursor: pointer;
   transition: transform 0.3s ease;
 
@@ -60,9 +60,11 @@ export const OptionIcon = styled.div`
 `;
 
 export const OptionLabel = styled.div`
-  font-size: clamp(12px, 1.5vw, 16px);
+  font-size: clamp(16px, 1.8vw, 20px);
   text-align: center;
-  line-height: 1.3;
-  font-weight: 500;
-   font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+  font-weight: 300;
+  font-family: Inter;
+  letter-spacing: 1px;
+  padding-top: 32px
 `;

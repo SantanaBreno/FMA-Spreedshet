@@ -9,29 +9,47 @@ import {
 } from './styles';
 
 import { FaFolderOpen } from 'react-icons/fa';
-import { FaTableList } from 'react-icons/fa6'; // substitua se usar outro ícone
+import { FaTableList } from 'react-icons/fa6'; 
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <HomeWrapper>
       <Title>Selecione o serviço desejado:</Title>
       <OptionsWrapper>
-        <OptionCard>
-          <OptionIcon>
-            <FaFolderOpen />
-          </OptionIcon>
+        {/* Card 1: Gerenciamento de Projetos */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <OptionCard>
+            <OptionIcon>
+              <FaFolderOpen size={72} />
+            </OptionIcon>
+          </OptionCard>
           <OptionLabel>
             Gerenciamento<br />de Projetos
           </OptionLabel>
-        </OptionCard>
-        <OptionCard>
-          <OptionIcon>
-            <FaTableList />
-          </OptionIcon>
+        </div>
+
+        {/* Card 2: Planilha de Decoração */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            cursor: 'pointer',
+          }}
+          onClick={() => navigate('/homespreadsheets')}
+        >
+          <OptionCard>
+            <OptionIcon>
+              <FaTableList size={72} />
+            </OptionIcon>
+          </OptionCard>
           <OptionLabel>
             Planilha de<br />Decoração
           </OptionLabel>
-        </OptionCard>
+        </div>
       </OptionsWrapper>
     </HomeWrapper>
   );
