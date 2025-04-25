@@ -38,6 +38,9 @@ export const LeftContainer = styled.div`
 
       h2 {
       color: black;
+      fonti-family: poppins;
+      font-size: 32px;
+      font-weight: 300;
     }
 `;
 

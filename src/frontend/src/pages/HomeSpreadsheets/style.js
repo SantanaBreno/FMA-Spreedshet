@@ -22,7 +22,6 @@ export const ContentWrapper = styled.div`
   width: 90%;
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
   margin-top: 40px;
   margin-left: 40px;
   
@@ -36,8 +35,7 @@ export const TopControls = styled.div`
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  margin-bottom: 40px;
-  border: 2px solid blue;
+  margin-bottom: 64px;
 `;
 
 export const ControlsRight = styled.div`
@@ -48,7 +46,6 @@ export const ControlsRight = styled.div`
 
 export const SpreadsheetContainer = styled.div`
   width: 100%;
-  border: 2px solid green;
   overflow-y: auto;
   padding: 0;
   display: flex;
@@ -57,7 +54,7 @@ export const SpreadsheetContainer = styled.div`
 
 export const OptionsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 60px;
   width: 100%;
 `;
@@ -70,7 +67,7 @@ export const OptionIcon = styled.div`
 `;
 
 export const OptionLabel = styled.div`
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: 16px;
   text-align: center;
   line-height: 1.3;
   font-weight: 300;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PlusIcon, Sidebar } from "lucide-react";
-import { FaRegFileExcel } from "react-icons/fa";
+import { CiImport } from "react-icons/ci";
 import { AddCard } from "../../components/NewSheets";
 import SheetsCard from "../../components/SheetsCard";
 import { SortToggle } from "../../components/SortToggle";
@@ -48,9 +48,15 @@ export const HomeSpreadsheets = () => {
               />
               <FilterToggle onClick={handleFilterClick} />
               <AddCard>
+                <OptionLabel>Importar</OptionLabel>
+                <OptionIcon>
+                  <CiImport size={20} style={{ color: "#DDDDDD", opacity: 0.8 }} />
+                </OptionIcon>
+              </AddCard>
+              <AddCard>
                 <OptionLabel>Nova Planilha</OptionLabel>
                 <OptionIcon>
-                  <PlusIcon size={24} style={{ color: "#DDDDDD" }} />
+                  <PlusIcon size={20} style={{ color: "#DDDDDD", opacity: 0.8 }} />
                 </OptionIcon>
               </AddCard>
             </ControlsRight>
