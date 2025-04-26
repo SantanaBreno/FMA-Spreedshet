@@ -24,11 +24,18 @@ import {
     NameSheet,
     Popup,
     Overlay,
-    CloseButton
+    ItemInputWrapper,
+    ItemInput,
+    CloseButton,
+    LabelInputWrapper,
+    ItemTextArea,      
+    ImageUploadArea,
+    ButtonWrapper,
+    CancelButton,   
 } from "./styles";
 
 const NewSheet = () => {
-    const [data, setData] = useState([/* Seu array de dados aqui */]);
+    const [data, setData] = useState([]);
     const [editMode, setEditMode] = useState(false);
     const [isPopupVisible, setPopupVisible] = useState(false);
 
@@ -60,7 +67,7 @@ const NewSheet = () => {
             <SideBar />
             <NewSheetWrapper>
                 <NavBar className="nav-bar"/>
-                <ContentContainer >
+                <ContentContainer>
                     <UpSideContentContainer>
                         <LeftContainer>
                             <NameSheet type="text" placeholder="Criar nova planilha" />
@@ -91,9 +98,40 @@ const NewSheet = () => {
                 <>
                     <Overlay onClick={handleClosePopup} />
                     <Popup>
-                        <h2>Adicionar Novo Item</h2>
-                        <p>Preencha os detalhes do novo item aqui.</p>
-                        <CloseButton onClick={handleClosePopup}>Fechar</CloseButton>
+                        <h2>Adicionar novo item:</h2>
+                        <ItemInputWrapper>
+                            <LabelInputWrapper>
+                                Nome do item
+                                <ItemInput type="text"  />
+                            </LabelInputWrapper>
+                            <LabelInputWrapper>
+                                Fornecedor
+                                <ItemInput type="text" />
+                            </LabelInputWrapper>
+                            <LabelInputWrapper>
+                                Dimensão
+                                <ItemInput type="text" />
+                            </LabelInputWrapper>
+                            <LabelInputWrapper>
+                                Valor unitário
+                                <ItemInput type="text" />
+                            </LabelInputWrapper>
+                            <LabelInputWrapper style={{ width: "48%" }}>
+                                Descrição
+                                <ItemTextArea />
+                            </LabelInputWrapper>
+                            <LabelInputWrapper style={{ width: "48%" }}>
+                                Imagem
+                                <ImageUploadArea>
+                                    Adicionar imagem ao produto
+                                    <Icon icon="mdi:image-outline" style={{ marginTop: 8, fontSize: 24, opacity: 0.8 }} />
+                                </ImageUploadArea>
+                            </LabelInputWrapper>
+                        </ItemInputWrapper>
+                        <ButtonWrapper>
+                            <CancelButton onClick={handleClosePopup}>Cancelar</CancelButton>
+                            <CloseButton onClick={handleClosePopup}>Adicionar</CloseButton>
+                        </ButtonWrapper>
                     </Popup>
                 </>
             )}

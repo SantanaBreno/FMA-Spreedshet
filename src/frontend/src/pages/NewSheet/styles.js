@@ -116,22 +116,29 @@ export const ScrollContainer = styled.div`
   height: 100%;
 `;
 
-// Estilo para o popup
 export const Popup = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #151515;
   border: 1px solid #ccc;
+  border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  width: 300px;
+  width: 960px;
+  height: 560px;
   text-align: center;
+
+  h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  margin-top: 12px;
+  }
 `;
 
-// Estilo para o overlay
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -142,16 +149,117 @@ export const Overlay = styled.div`
   z-index: 999;
 `;
 
-// Estilo para o botão de fechar
-export const CloseButton = styled.button`
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+export const ItemInputWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-left: 40px;
+  width: 100%;
+`;
+
+export const LabelInputWrapper = styled.label`
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #D0D0D0;
+  opacity: 0.8;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+`;
+
+export const ItemInput = styled.input`
+  width: 84%;
+  height: 40px;
+  color: #D0D0D0;
+  background-color: #151515;
+  border-radius: 8px;
+  border: 1px #676767 solid;
+  padding-left: 10px;
+  margin-top: 4px;
+  justify-content: space-between;
+`;
+
+export const ItemTextArea = styled.textarea`
+  width: 84%;
+  height: 150px;
+  background-color: #151515;
+  border-radius: 8px;
+  border: 1px #676767 solid;
+  padding: 10px;
+  color: #D0D0D0;
+  resize: none;
+  margin-top: 4px;
+  font-family: 'Inter', sans-serif;
+  opacity: 0.8;
+`;
+
+export const ImageUploadArea = styled.div`
+  width: 84%;
+  height: 150px;
+  border: 1px solid #676767;
+  border-radius: 8px;
+  background-color: #151515;
+  color: #D0D0D0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
   cursor: pointer;
-  
+  margin-top: 4px;
+  font-family: 'Inter', sans-serif;
+  opacity: 0.8;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+  width: 100%;
+  justify-content: center;
+`;
+
+export const CancelButton = styled.button`
+  width: 20%;
+  height: 32px;
+  background-color: #151515;
+  border: 1px solid red;
+  color: white;
+  opacity: 0.9;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  border-radius: 8px;
+  cursor: pointer;
+
   &:hover {
-    background-color: #45a049;
+    background-color: red;
+    color: white;
+    opacity: 1.0;
+  }
+`;
+
+export const CloseButton = styled.button`
+  width: 20%;
+  height: 32px;
+  background-color: #151515;
+  border: 1px solid #676767;
+  color: white;
+  opacity: 0.9;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #23CF5C;
+    color: black;
+    opacity: 1.0;
   }
 `;
