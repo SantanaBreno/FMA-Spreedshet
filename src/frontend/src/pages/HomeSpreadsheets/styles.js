@@ -24,10 +24,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   margin-top: 40px;
   margin-left: 40px;
-  
 `;
-
-
 
 export const TopControls = styled.div`
   width: 95%;
@@ -49,7 +46,6 @@ export const SpreadsheetContainer = styled.div`
   overflow-y: auto;
   padding: 0;
   display: flex;
-
 `;
 
 export const OptionsWrapper = styled.div`

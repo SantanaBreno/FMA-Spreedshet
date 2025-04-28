@@ -63,7 +63,22 @@ const NewSheet = () => {
             <LeftContainer>
               <NameSheet type="text" placeholder="Criar nova planilha" />
               <InputWrapper>
-                <FaSquarePlus style={IconStyles.FaSquarePlus} />
+                <button
+                  type="button" // importante definir o tipo para evitar comportamento inesperado
+                  onClick={() => { /* vazio por enquanto */ }}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <FaSquarePlus style={IconStyles.FaSquarePlus} />
+                </button>
+
                 <InputSearchWrapper>
                   <Input
                     type="text"
@@ -73,10 +88,11 @@ const NewSheet = () => {
                   />
                   <FaSearch className="search-icon" />
                 </InputSearchWrapper>
+
                 <AddItemButton onClick={handleAddItemClick}>
                   Adicionar novo item
                 </AddItemButton>
-              </InputWrapper>
+            </InputWrapper>
             </LeftContainer>
 
             <RightContainer>

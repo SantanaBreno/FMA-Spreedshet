@@ -13,7 +13,7 @@ import {
   UploadedImagePreview,
   ButtonWrapper,
   CancelButton,
-} from "./styles"; // Estilos da pasta components/Popup/styles.js
+} from "./styles"; 
 
 const PopupAddItem = ({ onClose }) => {
   const fileInputRef = useRef(null);
@@ -27,7 +27,7 @@ const PopupAddItem = ({ onClose }) => {
     const file = event.target.files[0];
     if (file) {
       const imageURL = URL.createObjectURL(file);
-      setImagePreview(imageURL); // Atualiza a imagem para aparecer no botão
+      setImagePreview(imageURL); 
     }
   };
 

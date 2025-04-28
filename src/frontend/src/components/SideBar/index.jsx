@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importa o useNavigate corretamente
-
+import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 import logo from "../../assets/logo_branca.svg";
@@ -17,10 +16,30 @@ import {
 
 const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate(); // Inicializa o hook para navegação
+  const navigate = useNavigate();
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    // Limpeza do evento
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
-    <Container isOpen={isOpen}>
+    <Container ref={sidebarRef} isOpen={isOpen}>
       <UpSideContainer>
         <LogoContainer isOpen={isOpen}>
           <Logo>

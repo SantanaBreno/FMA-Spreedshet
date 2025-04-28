@@ -1,11 +1,13 @@
 import React from "react";
-import { FilterButton } from "./style";
-import { LuFilter } from "react-icons/lu";
+import { Icon } from "@iconify/react"; // <-- Importa Iconify corretamente
+import { FilterButton } from "./style"; // Botão já estilizado no seu projeto
 
 export const FilterToggle = ({ onClick }) => {
   return (
     <FilterButton onClick={onClick}>
-      <LuFilter size={18} />
+      <Icon icon="flowbite:sort-outline" style={{ fontSize: 32, color: "#151515" }} />
     </FilterButton>
   );
 };
+
+export default FilterToggle;

@@ -102,7 +102,7 @@ export const AddItemButton = styled.button`
   margin-top: 8px;
   margin-left: 12px;
   color: #D0D0D0;
-  font-family: 'Poppins', sans-serif;
+  font-family: inter, sans-serif;
   font-size: 14px;
   cursor: pointer;
 
@@ -152,7 +152,7 @@ export const SelectProject = styled.select`
 
 export const SpreadsheetContainer = styled.div`
   height: 76%;
-  border: 2px solid black;
+  border: 1px solid black;
   width: 100%;
 `;
 

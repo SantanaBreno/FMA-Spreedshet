@@ -9,8 +9,7 @@ import {
   OptionLabel,
 } from './styles';
 
-import { FaFolderOpen } from 'react-icons/fa';
-import { FaTableList } from 'react-icons/fa6';
+import { Icon } from '@iconify/react'; // Agora usamos só Iconify para todos
 import { useNavigate } from 'react-router-dom';
 import NavBar from "../../components/NavBar";
 
@@ -19,18 +18,18 @@ const Home = () => {
 
   return (
     <>
-      <NavBar /> {/* A NavBar vem antes de tudo */}
+      <NavBar />
       
       <HomeWrapper>
         <ContentWrapper>
           <Title>Selecione o serviço desejado:</Title>
           <OptionsWrapper>
-            
+
             {/* Card 1: Gerenciamento de Projetos */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <OptionCard>
                 <OptionIcon>
-                  <FaFolderOpen size={72} color='#262626' />
+                  <Icon icon="material-symbols:bookmark-manager" style={{ fontSize: 100, color: '#262626' }} />
                 </OptionIcon>
               </OptionCard>
               <OptionLabel>
@@ -50,7 +49,7 @@ const Home = () => {
             >
               <OptionCard>
                 <OptionIcon>
-                  <FaTableList size={72} color='#262626' />
+                  <Icon icon="bxs:spreadsheet" style={{ fontSize: 100, color: '#262626' }} />
                 </OptionIcon>
               </OptionCard>
               <OptionLabel>

@@ -17,7 +17,6 @@ export const PopupWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #151515;
-  border: 1px solid #ccc;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -112,14 +111,14 @@ export const ImageUploadArea = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 28px;
+  gap: 28px;
+  margin-top: 40px;
   width: 100%;
   justify-content: center;
 `;
 
 export const CancelButton = styled.button`
-  width: 20%;
+  width: 16%;
   height: 32px;
   background-color: #151515;
   border: 1px solid red;
@@ -138,7 +137,7 @@ export const CancelButton = styled.button`
 `;
 
 export const CloseButton = styled.button`
-  width: 20%;
+  width: 16%;
   height: 32px;
   background-color: #151515;
   border: 1px solid #676767;
