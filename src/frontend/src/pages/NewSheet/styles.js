@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Icon } from '@iconify/react';
 
 export const NewSheetWrapper = styled.div`
   width: 100%;
@@ -18,63 +19,92 @@ export const NewSheetWrapper = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-    width: 90%;
-    height: 80vh;
-    margin-top: 40px;
-    margin-left: 40px;
+  width: 90%;
+  height: 80vh;
+  margin-top: 40px;
+  margin-left: 40px;
 `;
 
 export const UpSideContentContainer = styled.div`
-    height: 24%;
-    width: 100%;
-    display: flex;
+  height: 24%;
+  width: 100%;
+  display: flex;
 `;
 
 export const LeftContainer = styled.div`
-      width: 50%;
-      height: 100%;
+  width: 80%;
+  height: 100%;
 `;
 
 export const NameSheet = styled.input`
-    width: 76%;
-    height: 52px;
-    border-radius: 8px;
-    border: 1px solid black;
-    padding-left: 10px;
-    margin-bottom: 12px;
-    font-size: 24px;
-    font-family: 'Poppins', sans-serif;
+  width: 76%;
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding-left: 10px;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
 `;
 
 export const InputWrapper = styled.div`
   position: relative;
-  width: 100%;
+  width: 98.6%;
   display: flex;
   align-items: center;
+  gap: 10px;
 `;
 
-export const Input = styled.input`
-    width: 72%;
+export const InputSearchWrapper = styled.div`
+  position: relative;
+  width: 72%;
+
+  input {
+    width: 100%;
     height: 40px;
     border-radius: 8px;
     border: 1px solid black;
-    padding-left: 10px;
-    margin-top: 4px;
+    padding: 0 40px 0 10px;
+    font-size: 16px;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    opacity: 0.6;
+    font-size: 20px;
+    pointer-events: none;
+  }
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding-left: 10px;
+  margin-top: 4px;
 `;
 
 export const AddItemButton = styled.button`
   background-color: black;
   display: flex;
   align-items: center;
-  text-align: center;
   justify-content: center;
   height: 40px;
-  width: 152px;
+  width: 172px;
   padding: 8px;
   border: none;
-  border-radius: 8px;
-  margin-top: 10px;
+  border-radius: 12px;
+  margin-top: 8px;
+  margin-left: 12px;
   color: #D0D0D0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
 
   span {
     color: #D0D0D0;
@@ -82,31 +112,48 @@ export const AddItemButton = styled.button`
 `;
 
 export const RightContainer = styled.div`
-      width: 50%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 `;
 
-export const ExportButton = styled.button`
-  background-color: black;
+export const DropdownWrapper = styled.div`
   display: flex;
-  align-items: center;
-  padding: 8px;
-  border: none;
-  border-radius: 8px;
-  margin-top: 10px;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 8px;
+`;
 
-  span {
-    color: #D0D0D0;
+export const SelectProjectWrapper = styled.div`
+  position: relative;
+  width: 172px;
+`;
+
+export const SelectProject = styled.select`
+  height: 40px;
+  width: 100%;
+  padding: 0 30px 0 8px;
+  border-radius: 8px;
+  border: 1px solid #505050;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background-color: white;
+  color: #454545;
+  cursor: pointer;
+  appearance: none;
+
+  option {
+    background: white;
+    color: black;
   }
 `;
 
 export const SpreadsheetContainer = styled.div`
-    height: 76%;
-    border: 2px solid black;
-    width: 100%;
+  height: 76%;
+  border: 2px solid black;
+  width: 100%;
 `;
 
 export const ScrollContainer = styled.div`
@@ -116,150 +163,31 @@ export const ScrollContainer = styled.div`
   height: 100%;
 `;
 
-export const Popup = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #151515;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  width: 960px;
-  height: 560px;
-  text-align: center;
-
-  h2{
-  font-family: 'Poppins', sans-serif;
-  font-size: 28px;
-  font-weight: 300;
-  margin-top: 12px;
-  }
-`;
-
-export const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-`;
-
-export const ItemInputWrapper = styled.div`
+export const ExportButton = styled.button`
+  background-color: black;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 20px;
-  margin-top: 40px;
-  margin-left: 40px;
-  width: 100%;
-`;
-
-export const LabelInputWrapper = styled.label`
-  display: flex;
-  flex-direction: column;
-  width: 48%;
-  margin-bottom: 10px;
-  font-size: 14px;
-  color: #D0D0D0;
-  opacity: 0.8;
-  text-align: left;
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-`;
-
-export const ItemInput = styled.input`
-  width: 84%;
-  height: 40px;
-  color: #D0D0D0;
-  background-color: #151515;
-  border-radius: 8px;
-  border: 1px #676767 solid;
-  padding-left: 10px;
-  margin-top: 4px;
-  justify-content: space-between;
-`;
-
-export const ItemTextArea = styled.textarea`
-  width: 84%;
-  height: 150px;
-  background-color: #151515;
-  border-radius: 8px;
-  border: 1px #676767 solid;
-  padding: 10px;
-  color: #D0D0D0;
-  resize: none;
-  margin-top: 4px;
-  font-family: 'Inter', sans-serif;
-  opacity: 0.8;
-`;
-
-export const ImageUploadArea = styled.div`
-  width: 84%;
-  height: 150px;
-  border: 1px solid #676767;
-  border-radius: 8px;
-  background-color: #151515;
-  color: #D0D0D0;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  cursor: pointer;
-  margin-top: 4px;
-  font-family: 'Inter', sans-serif;
-  opacity: 0.8;
-`;
-
-export const ButtonWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 28px;
-  width: 100%;
-  justify-content: center;
-`;
-
-export const CancelButton = styled.button`
-  width: 20%;
-  height: 32px;
-  background-color: #151515;
-  border: 1px solid red;
-  color: white;
-  opacity: 0.9;
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
+  height: 40px;
+  width: 172px;
+  padding: 8px;
+  border: none;
   border-radius: 8px;
+  margin-top: 10px;
   cursor: pointer;
+  font-family: 'Inter', sans-serif;
 
-  &:hover {
-    background-color: red;
-    color: white;
-    opacity: 1.0;
+  span {
+    color: #D0D0D0;
   }
 `;
 
-export const CloseButton = styled.button`
-  width: 20%;
-  height: 32px;
-  background-color: #151515;
-  border: 1px solid #676767;
-  color: white;
-  opacity: 0.9;
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  border-radius: 8px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #23CF5C;
-    color: black;
-    opacity: 1.0;
-  }
+export const DropdownIcon = styled(Icon)`
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #262626;
+  pointer-events: none;
 `;

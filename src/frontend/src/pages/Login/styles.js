@@ -10,13 +10,18 @@ export const PageWrapper = styled.div`
 `;
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px 16px;
-  width: clamp(181px, 40vw, 320px);
+  width: clamp(181px, 40vw, 200px);
+  height: 36px;
   background-color: white;
   border: 1px solid black;
   border-radius: 8px;
-  font-weight: 500;
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: clamp(14px, 1.5vw, 16px);
   cursor: pointer;
   transition: 0.3s ease;
   margin-top: clamp(24px, 6vh, 60px);
