@@ -30,7 +30,7 @@ export const ContentWrapper = styled.div`
 
 
 export const TopControls = styled.div`
-  width: 100%;
+  width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,7 +45,7 @@ export const ControlsRight = styled.div`
 `;
 
 export const SpreadsheetContainer = styled.div`
-  width: 100%;
+  width: 103%;
   overflow-y: auto;
   padding: 0;
   display: flex;
