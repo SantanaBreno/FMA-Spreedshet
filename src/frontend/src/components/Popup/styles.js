@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+export const HiddenFileInput = styled.input`
+  display: none;
+`;
+
+export const UploadedImagePreview = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+`;
+
 export const PopupWrapper = styled.div`
   position: fixed;
   top: 50%;
