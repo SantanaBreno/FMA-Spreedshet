@@ -22,7 +22,6 @@ class AuthService:
     def __init__(self, db_session: Session):
         self.db_session = db_session
 
-
     def user_register(self, user: UserCreate):
         user = User(
             name = user.name,

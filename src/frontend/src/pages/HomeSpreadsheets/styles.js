@@ -24,6 +24,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   margin-top: 40px;
   margin-left: 40px;
+  
 `;
 
 export const TopControls = styled.div`

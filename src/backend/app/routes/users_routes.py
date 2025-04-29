@@ -16,8 +16,10 @@ def user_register(
     user: UserCreate,
     db_session: Session = Depends(get_db_session)
     ):
+
     auth_service = AuthService(db_session=db_session)
     auth_service.user_register(user=user)
+    
     return JSONResponse(
         content={'msg': 'sucess'},
         status_code=status.HTTP_201_CREATED
@@ -28,6 +30,7 @@ def user_login(
     request_form_user: OAuth2PasswordRequestForm = Depends(),
     db_session: Session = Depends(get_db_session)
     ):
+    
     auth_service = AuthService(db_session=db_session)
     
     user = UserLogin(
