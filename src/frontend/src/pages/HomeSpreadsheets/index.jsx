@@ -18,7 +18,7 @@ import {
   ControlsRight,
   ContentWrapper,
   SpreadsheetContainer,
-} from "./style";
+} from "./styles";
 
 export const HomeSpreadsheets = () => {
   const [sortOrder, setSortOrder] = useState("desc");
