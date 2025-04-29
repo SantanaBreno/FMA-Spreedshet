@@ -1,13 +1,16 @@
-import React, { useState } from "react";
-import { PlusIcon, Sidebar } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { PlusIcon } from "lucide-react";
 import { CiImport } from "react-icons/ci";
-import { AddCard } from "../../components/NewSheets";
-import SheetsCard from "../../components/SheetsCard";
-import { SortToggle } from "../../components/SortToggle";
-import { Icon } from "@iconify/react"; // Importando Iconify
+import { Icon } from "@iconify/react";
+
 import SideBar from '../../components/SideBar';
 import NavBar from "../../components/NavBar";
 import Input from "../../components/Input";
+import SheetsCard from "../../components/SheetsCard";
+import { AddCard } from "../../components/NewSheets";
+import { SortToggle } from "../../components/SortToggle";
 
 import {
   HomeWrapper,
@@ -21,11 +24,22 @@ import {
 } from "./styles";
 
 export const HomeSpreadsheets = () => {
+  const [spreadsheets, setSpreadsheets] = useState([]);
   const [sortOrder, setSortOrder] = useState("desc");
+  const navigate = useNavigate();
 
-  const spreadsheets = Array(12).fill({
-    title: "Planilha xx",
-  });
+  useEffect(() => {
+    const fetchSpreadsheets = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/spreadsheets");
+        setSpreadsheets(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar planilhas:", error);
+      }
+    };
+
+    fetchSpreadsheets();
+  }, []);
 
   const handleFilterClick = () => {
     alert("Abrir modal/função de filtro...");
@@ -84,13 +98,15 @@ export const HomeSpreadsheets = () => {
                 <Icon icon="flowbite:sort-outline" style={{ fontSize: 32, color: "#262626" }} />
               </button>
 
+              {/* Botões de Importar e Nova Planilha */}
               <AddCard>
                 <OptionLabel>Importar</OptionLabel>
                 <OptionIcon>
                   <CiImport size={20} style={{ color: "#DDDDDD", opacity: 0.8 }} />
                 </OptionIcon>
               </AddCard>
-              <AddCard>
+
+              <AddCard onClick={() => navigate("/newsheet")}>
                 <OptionLabel>Nova Planilha</OptionLabel>
                 <OptionIcon>
                   <PlusIcon size={20} style={{ color: "#DDDDDD", opacity: 0.8 }} />
@@ -99,11 +115,15 @@ export const HomeSpreadsheets = () => {
             </ControlsRight>
           </TopControls>
 
+          {/* Renderização dos Cards com planilhas reais */}
           <SpreadsheetContainer>
             <OptionsWrapper>
-              {spreadsheets.map((sheet, index) => (
-                <SheetsCard key={index} title={sheet.title} />
-              ))}
+            {spreadsheets.map((sheet) => {
+              const cleanTitle = sheet.title.replace(/\.[^/.]+$/, ""); // remove extensão .xls, .xlsx, etc.
+              return (
+                <SheetsCard key={sheet.title} title={cleanTitle} />
+              );
+            })}
             </OptionsWrapper>
           </SpreadsheetContainer>
         </ContentWrapper>

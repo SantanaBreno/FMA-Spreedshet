@@ -32,7 +32,6 @@ const SideBar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     }
 
-    // Limpeza do evento
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -75,6 +74,12 @@ const SideBar = () => {
           }}
         />
         <Label isOpen={isOpen}>Nova tabela</Label>
+      </NavItem>
+
+      {/* Novo botão: Itens adicionados com novo ícone */}
+      <NavItem onClick={() => navigate('/itens-adicionados')} isOpen={isOpen}>
+        <Icon icon="ix:item-details-filled" width="24" height="24" />
+        <Label isOpen={isOpen}>Itens adicionados</Label>
       </NavItem>
     </Container>
   );
