@@ -1,28 +1,32 @@
 import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
-  height: 100vh;
+  height: calc(100vh - 50px);
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: black;
   color: white;
-  padding: 0; // ou ajuste para não estourar a altura
+  padding: 0;
 `;
-
+export const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 80px; // espaço entre o título e os cards
+`;
 
 export const Title = styled.h2`
   font-size: clamp(20px, 3vw, 32px);
-  margin-bottom: clamp(32px, 6vh, 60px);
   text-align: center;
-  font-weight: 400;
+  font-weight: 300;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
-  padding: 32px;
+  margin: 0; 
 `;
 
 export const OptionsWrapper = styled.div`
@@ -60,11 +64,12 @@ export const OptionIcon = styled.div`
 `;
 
 export const OptionLabel = styled.div`
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(16px, 1.8vw, 16px);
+  color: #DCDCDC;
   text-align: center;
   line-height: 1.2;
   font-weight: 300;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   letter-spacing: 1px;
-  padding-top: 32px
+  padding-top: 32px;
 `;

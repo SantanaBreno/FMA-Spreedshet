@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const OptionCard = styled.div`
   background-color: #f8f8f8;
   border-radius: 8px;
-  width: clamp(180px, 80vw, 220px);
-  height: clamp(110px, 20vh, 190px);
+  width: clamp(180px, 80vw, 216px);
+  height: clamp(110px, 24vh, 190px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -23,8 +23,8 @@ export const CardHeader = styled.div`
   padding: 12px;
   text-align: left;
   width: 100%;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 300;
   font-family: 'Inter', sans-serif;
   letter-spacing: 0.5px;
 `;

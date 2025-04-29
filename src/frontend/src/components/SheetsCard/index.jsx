@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegFileExcel } from "react-icons/fa";
+import { Icon } from "@iconify/react"; 
 
 import {
   OptionCard as StyledOptionCard,
@@ -7,12 +7,12 @@ import {
   CardBody,
 } from "./styles";
 
-const SheetsCard = ({ title, Icon }) => {
+const SheetsCard = ({ title }) => {
   return (
     <StyledOptionCard>
       <CardHeader>{title}</CardHeader>
       <CardBody>
-        <FaRegFileExcel size={40} color="#417636"/>      
+        <Icon icon="vscode-icons:file-type-excel2" style={{ fontSize: 48, color: "#417636" }} />
       </CardBody>
     </StyledOptionCard>
   );

@@ -9,9 +9,13 @@ export const Container = styled.div`
   transition: width 0.3s;
   display: flex;
   flex-direction: column;
-  align-items: ${props => (props.isOpen ? 'normal': 'center')};
-  position: absolute;
+  align-items: ${props => (props.isOpen ? 'normal' : 'center')};
+  position: fixed; /* <-- troque absolute para FIXED */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* <-- garantir que fique acima do conteúdo */
 `;
+
 
 export const UpSideContainer = styled.div`
   border-color: white;
@@ -60,7 +64,7 @@ export const NavItem = styled.a`
   display: flex;
   align-items: center;
   gap: ${props => (props.isOpen ? "0.75rem" : "0")};
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 0.375rem;
   text-decoration: none;
   color: inherit;
