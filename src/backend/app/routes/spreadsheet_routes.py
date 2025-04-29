@@ -12,7 +12,7 @@ router = APIRouter(
     tags=["Spreadsheet Routes"]
 )
 
-@router.post("/spreadsheet")
+@router.post("/")
 def upload_spreadsheet(
     file: UploadFile = File(...),
     db_session: Session = Depends(get_db_session)
