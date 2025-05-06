@@ -20,7 +20,7 @@ export const PopupWrapper = styled.div`
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 999999;
   width: 960px;
   height: 560px;
   text-align: center;
@@ -38,11 +38,11 @@ export const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-`;
+  z-index: 999998
+;`;
 
 export const ItemInputWrapper = styled.div`
   display: flex;

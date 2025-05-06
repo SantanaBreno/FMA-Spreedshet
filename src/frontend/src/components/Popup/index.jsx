@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
+import ReactDOM from "react-dom";
 import { Icon } from "@iconify/react";
+
 import {
   PopupWrapper,
   Overlay,
@@ -31,7 +33,13 @@ const PopupAddItem = ({ onClose }) => {
     }
   };
 
-  return (
+  const modalRoot = document.getElementById("modal-root");
+  if (!modalRoot) {
+    console.error("Elemento #modal-root não encontrado. Adicione <div id='modal-root'></div> no index.html");
+    return null;
+  }
+
+  return ReactDOM.createPortal(
     <>
       <Overlay onClick={onClose} />
       <PopupWrapper>
@@ -72,7 +80,8 @@ const PopupAddItem = ({ onClose }) => {
           <CloseButton onClick={onClose}>Adicionar</CloseButton>
         </ButtonWrapper>
       </PopupWrapper>
-    </>
+    </>,
+    modalRoot // ✅ AGORA está no lugar certo
   );
 };
 
