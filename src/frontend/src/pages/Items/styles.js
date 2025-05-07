@@ -52,6 +52,7 @@ justify-content: flex-end;
 align-items: flex-end;
 flex-direction: row;
 gap: 16px;
+font-weight: 300;
 `;
 
 export const CardsWrapper = styled.div`
@@ -92,12 +93,18 @@ width: 100%;
 `;
 
 export const SearchInput = styled.input`
-padding: 10px 40px 10px 12px;
-font-size: 14px;
-border-radius: 8px;
-border: 1px solid #ccc;
-width: 100%;
-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 40px 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+
+  &:focus {
+    outline: none;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 export const SearchIcon = styled(Icon)`
@@ -109,26 +116,32 @@ color: #333;
 `;
 
 export const EditInput = styled.input`
-padding: 8px 12px;
-font-size: 14px;
-border: 1px solid #ccc;
-border-radius: 8px;
-width: 100%;
-box-sizing: border-box;
-font-family: 'Inter', sans-serif;
-font-weight: 300;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  padding: 4px 8px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+  }
 `;
+
 
 export const SaveButton = styled.button`
 background-color: black;
 color: white;
 border: none;
-padding: 10px 16px;
+padding: 8px 20px;
 border-radius: 8px;
 cursor: pointer;
 font-family: 'Inter', sans-serif;
 font-size: 14px;
-font-weight: 400;
+font-weight: 300;
 margin-top: 10px;
 align-self: flex-start;
 
@@ -143,18 +156,17 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 8px;
-background-color: ${({ isExpanded }) => (isExpanded ? "#fff" : "#f7f7f7")};
 border-radius: 8px;
 font-family: 'Poppins', sans-serif;
 font-size: 16px;
 
 span {
     font-weight: 300;
-    color: ${({ isExpanded }) => (isExpanded ? "#000" : "#555")};
+    color: ${({ $isExpanded }) => ($isExpanded ? "#000" : "#555")};
 }
 
 svg {
-    color: ${({ isExpanded }) => (isExpanded ? "#000" : "#999")};
+    color: ${({ $isExpanded }) => ($isExpanded ? "#000" : "#999")};
 }
 
 &:hover {

@@ -12,6 +12,7 @@ export const UploadedImagePreview = styled.img`
 `;
 
 export const PopupWrapper = styled.div`
+  
   position: fixed;
   top: 50%;
   left: 50%;

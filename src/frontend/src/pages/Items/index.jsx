@@ -3,11 +3,11 @@ import { Icon } from "@iconify/react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import SideBar from '../../components/SideBar';
 import NavBar from "../../components/NavBar";
 import { AddCard } from "../../components/NewSheets";
+import Popup from "../../components/Popup"; 
 
 import {
   DecorationWorksheetsWrapper,
@@ -47,9 +47,10 @@ const DecorationWorksheets = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedCard, setExpandedCard] = useState(null);
   const [editingId, setEditingId] = useState(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false); 
 
   const handleAddItemClick = () => {
-    console.log("Novo item");
+    setIsPopupOpen(true);
   };
 
   const handleInputChange = (id, field, value) => {
@@ -88,7 +89,7 @@ const DecorationWorksheets = () => {
             <RightContainer>
               <AddCard onClick={handleAddItemClick}>
                 Novo item
-                <Icon icon="ic:baseline-add" />
+                <Icon icon="ic:baseline-add" style={{ opacity: 0.8 }} />
               </AddCard>
             </RightContainer>
           </UpSideContentContainer>
@@ -103,21 +104,27 @@ const DecorationWorksheets = () => {
                 }
               >
                 <AccordionSummary>
-                  <CardHeader isExpanded={expandedCard === item.id}>
+                  <CardHeader $isExpanded={expandedCard === item.id}>
                     <span>{item.produto} - {item.descricao}</span>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                       <Icon
-                        icon="mdi:pencil"
+                        icon="flowbite:edit-solid"
+                        width="24"
+                        height="24"
                         onClick={(e) => {
                           e.stopPropagation();
                           setEditingId(item.id);
                         }}
                         style={{ cursor: 'pointer' }}
                       />
-                      <ExpandMoreIcon
+                      <Icon
+                        icon="eva:arrow-up-fill"
+                        width="24"
+                        height="24"
                         style={{
                           transform: expandedCard === item.id ? 'rotate(180deg)' : 'rotate(0deg)',
-                          transition: 'transform 0.2s ease'
+                          transition: 'transform 0.2s ease',
+                          cursor: 'pointer'
                         }}
                       />
                     </div>
@@ -159,8 +166,15 @@ const DecorationWorksheets = () => {
                         <li>{item.descricao}</li>
                         <li>Dimensão: {item.dimensao}</li>
                         <li>Fornecedor: {item.fornecedor}</li>
-                        <li>Valor total inicial: R$ {item.valorUnitario.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</li>
+                        <li>
+                          Valor total inicial: R$ {item.valorUnitario.toLocaleString('pt-BR', {
+                            minimumFractionDigits: 2,
+                          })}
+                        </li>
                       </ul>
+                      {editingId === item.id && (
+                        <SaveButton onClick={() => setEditingId(null)}>Salvar</SaveButton>
+                      )}
                     </CardContent>
                   )}
                 </AccordionDetails>
@@ -169,6 +183,8 @@ const DecorationWorksheets = () => {
           </CardsWrapper>
         </ContentContainer>
       </DecorationWorksheetsWrapper>
+      {isPopupOpen && <Popup onClose={() => setIsPopupOpen(false)} />}
+
     </>
   );
 };

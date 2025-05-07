@@ -15,7 +15,7 @@ import {
   UploadedImagePreview,
   ButtonWrapper,
   CancelButton,
-} from "./styles"; 
+} from "./styles";
 
 const PopupAddItem = ({ onClose }) => {
   const fileInputRef = useRef(null);
@@ -29,7 +29,7 @@ const PopupAddItem = ({ onClose }) => {
     const file = event.target.files[0];
     if (file) {
       const imageURL = URL.createObjectURL(file);
-      setImagePreview(imageURL); 
+      setImagePreview(imageURL);
     }
   };
 
@@ -51,10 +51,12 @@ const PopupAddItem = ({ onClose }) => {
               <ItemInput type="text" />
             </LabelInputWrapper>
           ))}
+
           <LabelInputWrapper style={{ width: "48%" }}>
             Descrição
             <ItemTextArea />
           </LabelInputWrapper>
+
           <LabelInputWrapper style={{ width: "48%" }}>
             Imagem
             <ImageUploadArea onClick={handleImageClick}>
@@ -75,13 +77,14 @@ const PopupAddItem = ({ onClose }) => {
             </ImageUploadArea>
           </LabelInputWrapper>
         </ItemInputWrapper>
+
         <ButtonWrapper>
           <CancelButton onClick={onClose}>Cancelar</CancelButton>
           <CloseButton onClick={onClose}>Adicionar</CloseButton>
         </ButtonWrapper>
       </PopupWrapper>
     </>,
-    modalRoot // ✅ AGORA está no lugar certo
+    modalRoot
   );
 };
 
