@@ -2,20 +2,19 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 100vh;
-  width: ${props => (props.isOpen ? "250px" : "60px")};
+  width: ${props => (props.$isOpen ? "250px" : "60px")};
   background-color: black;
   color: white;
   padding: 1rem;
   transition: width 0.3s;
   display: flex;
   flex-direction: column;
-  align-items: ${props => (props.isOpen ? 'normal' : 'center')};
-  position: fixed; /* <-- troque absolute para FIXED */
+  align-items: ${props => (props.$isOpen ? 'normal' : 'center')};
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* <-- garantir que fique acima do conteúdo */
+  z-index: 1000;
 `;
-
 
 export const UpSideContainer = styled.div`
   border-color: white;
@@ -26,7 +25,7 @@ export const UpSideContainer = styled.div`
 
 export const LogoContainer = styled.div`
   font-family: 'Inter', sans-serif;
-  display: ${props => (props.isOpen ? 'flex': 'none')};
+  display: ${props => (props.$isOpen ? 'flex': 'none')};
   padding: 0;
 `;
 
@@ -36,7 +35,7 @@ export const ToggleButton = styled.button`
   color: white;
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  align-self: ${({isOpen}) => (isOpen ? 'flex-end': 'center')};
+  align-self: ${({ $isOpen }) => ($isOpen ? 'flex-end': 'center')};
   cursor: pointer;
 `;
 
@@ -52,18 +51,18 @@ export const Logo = styled.div`
     height: 25px;
   }
 
-   span {
+  span {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     padding-left: 5px;
-    font-size: 30px;  
+    font-size: 30px;
   }
-  ` 
+`;
 
 export const NavItem = styled.a`
   display: flex;
   align-items: center;
-  gap: ${props => (props.isOpen ? "0.75rem" : "0")};
+  gap: ${props => (props.$isOpen ? "0.75rem" : "0")};
   padding: 0.8rem;
   border-radius: 0.375rem;
   text-decoration: none;
@@ -77,6 +76,6 @@ export const NavItem = styled.a`
 `;
 
 export const Label = styled.span`
-  display: ${props => (props.isOpen ? "inline" : "none")};
+  display: ${props => (props.$isOpen ? "inline" : "none")};
   transition: display 0.3s;
 `;

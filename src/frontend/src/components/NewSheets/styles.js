@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const AddCardWrapper = styled.div`
-  width: 200px;
+  width: 220px;
   height: 40px;
   background-color: #151515;
   color: white;

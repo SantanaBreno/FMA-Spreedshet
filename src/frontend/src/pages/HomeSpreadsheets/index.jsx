@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PlusIcon, Sidebar } from "lucide-react";
 import { CiImport } from "react-icons/ci";
 import { AddCard } from "../../components/NewSheets";
@@ -26,6 +27,8 @@ export const HomeSpreadsheets = () => {
   const spreadsheets = Array(12).fill({
     title: "Planilha xx",
   });
+
+  const navigate = useNavigate();
 
   const handleFilterClick = () => {
     alert("Abrir modal/função de filtro...");
@@ -90,7 +93,7 @@ export const HomeSpreadsheets = () => {
                   <CiImport size={20} style={{ color: "#DDDDDD", opacity: 0.8 }} />
                 </OptionIcon>
               </AddCard>
-              <AddCard>
+              <AddCard onClick={() => navigate("/newsheet")}>
                 <OptionLabel>Nova Planilha</OptionLabel>
                 <OptionIcon>
                   <PlusIcon size={20} style={{ color: "#DDDDDD", opacity: 0.8 }} />

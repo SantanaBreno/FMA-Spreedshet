@@ -32,38 +32,36 @@ const SideBar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     }
 
-    // Limpeza do evento
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
 
   return (
-    <Container ref={sidebarRef} isOpen={isOpen}>
+    <Container ref={sidebarRef} $isOpen={isOpen}>
       <UpSideContainer>
-        <LogoContainer isOpen={isOpen}>
+        <LogoContainer $isOpen={isOpen}>
           <Logo>
             <img src={logo} alt="Logo" />
             <span>FMA</span>
           </Logo>
         </LogoContainer>
-        <ToggleButton onClick={() => setIsOpen(!isOpen)}>
+        <ToggleButton onClick={() => setIsOpen(!isOpen)} $isOpen={isOpen}>
           <Icon icon="heroicons:bars-3-bottom-right-16-solid" />
         </ToggleButton>
       </UpSideContainer>
 
-      {/* Botões com navegação */}
-      <NavItem onClick={() => navigate('/home')} isOpen={isOpen}>
+      <NavItem onClick={() => navigate('/home')} $isOpen={isOpen}>
         <Icon icon="mdi:home" style={{ width: 24, height: 24 }} />
-        <Label isOpen={isOpen}>Página inicial</Label>
+        <Label $isOpen={isOpen}>Página inicial</Label>
       </NavItem>
 
-      <NavItem onClick={() => navigate('/homespreadsheets')} isOpen={isOpen}>
+      <NavItem onClick={() => navigate('/homespreadsheets')} $isOpen={isOpen}>
         <Icon icon="mdi:google-spreadsheet" style={{ width: 24, height: 24 }} />
-        <Label isOpen={isOpen}>Planilhas</Label>
+        <Label $isOpen={isOpen}>Planilhas</Label>
       </NavItem>
 
-      <NavItem onClick={() => navigate('/newsheet')} isOpen={isOpen}>
+      <NavItem onClick={() => navigate('/newsheet')} $isOpen={isOpen}>
         <Icon
           icon="tabler:plus"
           style={{
@@ -74,7 +72,19 @@ const SideBar = () => {
             borderRadius: 4,
           }}
         />
-        <Label isOpen={isOpen}>Nova tabela</Label>
+        <Label $isOpen={isOpen}>Nova tabela</Label>
+      </NavItem>
+
+      {/* ✅ NOVO: Itens Adicionados */}
+      <NavItem onClick={() => navigate('/items')} $isOpen={isOpen}>
+        <Icon icon="ix:item-details-filled" style={{ width: 24, height: 24 }} />
+        <Label $isOpen={isOpen}>Itens adicionados</Label>
+      </NavItem>
+
+      {/* ✅ NOVO: Colaboradores */}
+      <NavItem onClick={() => navigate('/employee-registration')} $isOpen={isOpen}>
+        <Icon icon="fluent:person-add-16-filled" style={{ width: 20, height: 20 }} />
+        <Label $isOpen={isOpen}>Colaboradores</Label>
       </NavItem>
     </Container>
   );
