@@ -22,7 +22,7 @@ const fmaGlobalStyles = createGlobalStyle`
     color: white;
     height: 100%;
     width: 100%;
-    overflow: hidden; /* Impede qualquer scroll geral */
+    overflor-y: auto;
   }
 
   #root {

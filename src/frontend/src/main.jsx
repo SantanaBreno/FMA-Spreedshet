@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import HomeSpreadsheets from './pages/HomeSpreadsheets';
 import DecorationWorksheets from './pages/DecorationWorksheets';
 import NewSheet from './pages/NewSheet';
+import Items from './pages/Items';
 import GlobalStyles from './styles/globalStyles';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/decoration-worksheets" element={<DecorationWorksheets />} />
         <Route path="/homespreadsheets" element={<HomeSpreadsheets />} />
         <Route path="/newsheet" element={<NewSheet/>} />
+        <Route path="/items" element={<Items />} />
       </Routes>
     </Router>
   </React.StrictMode>

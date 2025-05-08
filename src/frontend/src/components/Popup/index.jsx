@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
+import ReactDOM from "react-dom";
 import { Icon } from "@iconify/react";
+
 import {
   PopupWrapper,
   Overlay,
@@ -13,7 +15,7 @@ import {
   UploadedImagePreview,
   ButtonWrapper,
   CancelButton,
-} from "./styles"; 
+} from "./styles";
 
 const PopupAddItem = ({ onClose }) => {
   const fileInputRef = useRef(null);
@@ -27,11 +29,17 @@ const PopupAddItem = ({ onClose }) => {
     const file = event.target.files[0];
     if (file) {
       const imageURL = URL.createObjectURL(file);
-      setImagePreview(imageURL); 
+      setImagePreview(imageURL);
     }
   };
 
-  return (
+  const modalRoot = document.getElementById("modal-root");
+  if (!modalRoot) {
+    console.error("Elemento #modal-root não encontrado. Adicione <div id='modal-root'></div> no index.html");
+    return null;
+  }
+
+  return ReactDOM.createPortal(
     <>
       <Overlay onClick={onClose} />
       <PopupWrapper>
@@ -43,10 +51,12 @@ const PopupAddItem = ({ onClose }) => {
               <ItemInput type="text" />
             </LabelInputWrapper>
           ))}
+
           <LabelInputWrapper style={{ width: "48%" }}>
             Descrição
             <ItemTextArea />
           </LabelInputWrapper>
+
           <LabelInputWrapper style={{ width: "48%" }}>
             Imagem
             <ImageUploadArea onClick={handleImageClick}>
@@ -67,12 +77,14 @@ const PopupAddItem = ({ onClose }) => {
             </ImageUploadArea>
           </LabelInputWrapper>
         </ItemInputWrapper>
+
         <ButtonWrapper>
           <CancelButton onClick={onClose}>Cancelar</CancelButton>
           <CloseButton onClick={onClose}>Adicionar</CloseButton>
         </ButtonWrapper>
       </PopupWrapper>
-    </>
+    </>,
+    modalRoot
   );
 };
 
