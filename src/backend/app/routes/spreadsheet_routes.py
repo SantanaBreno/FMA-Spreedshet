@@ -27,15 +27,12 @@ def upload_spreadsheet(
     try: 
         df = pd.read_csv(file.file, sheet_name=0, skiprows=25) if file.filename.endswith(".csv") else pd.read_excel(file.file, sheet_name=0, skiprows=25)
         
-        numeric_cols = ['QNT', 'VALOR UNITÁRIO', 'VALOR TOTAL']
-        
-        for col in numeric_cols:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
-
 
         filename = file.filename
 
         spreadsheet_service = SpreadsheetService(db_session=db_session)
+        
+        df = spreadsheet_service.treat_spreadsheet(df)
         spreadsheet_service.process_spreadsheet(df, filename)
 
         return JSONResponse(
